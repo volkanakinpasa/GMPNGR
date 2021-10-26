@@ -1,0 +1,23 @@
+{
+  "manifest_version": 2,
+  "name": "GMPNGR",
+  "description": "validate if the extension is installed",
+  "version": "0.0.1",
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://localhost:5000/*"],
+      "js": ["contentScript.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "icons": {
+    "128": "logo-128.png"
+  },
+
+  "externally_connectable": {
+    "matches": ["http://localhost:5000/*"]
+  }
+}
