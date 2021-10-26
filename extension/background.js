@@ -8,14 +8,15 @@ chrome.runtime.onMessageExternal.addListener(function (
   sendResponse
 ) {
   switch (message.type) {
-    case "from-website":
+    case "isInstalled":
       //todo:call contentscript.
       chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
         sendMessageToContentScript(tabs[0].id, {
           ...message,
+          installed: true,
         });
 
-        sendResponse(message);
+        sendResponse({ installed: true });
       });
       break;
   }
