@@ -19,7 +19,8 @@
         { type: "isInstalled" },
         function (response) {
           console.log("PRINTED BY HOME PAGE", { response });
-          document.querySelector("#message").innerHTML = "Installed!";
+          document.querySelector("#message").innerHTML =
+            "Installed! Please also check your console logs in dev tool";
         }
       );
     } catch (error) {
